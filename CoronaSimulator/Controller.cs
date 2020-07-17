@@ -13,8 +13,13 @@ namespace CoronaSimulator
         private Random m_Rnd = new Random();
         private Cell[,] m_Grid;
         private int m_IDCounter = 0;
+        Form1 settings;
+
         public Controller()
         {
+            settings = new Form1();
+            settings.m_Control = this;
+            settings.ShowDialog();
         }
 
         public Configuration Config { get => m_config; set => m_config = value; }

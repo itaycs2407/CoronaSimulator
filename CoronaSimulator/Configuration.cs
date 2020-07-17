@@ -14,7 +14,7 @@ namespace CoronaSimulator
         private int m_Tick = 1000;
         private int m_DistanceToBecomeCarrying = 1;
         private int m_stepDistance = 1;
-        private int m_HealtyNumbe = 5;
+        private int m_HealtyNumber = 5;
         private int m_SickNumber = 10;
         private int m_CarryNumber = 10;
 
@@ -26,6 +26,6 @@ namespace CoronaSimulator
         public int HealtyNumber { get => m_HealtyNumber; set => m_HealtyNumber = value; }
         public int SickNumber { get => m_SickNumber; set => m_SickNumber = value; }
         public int CarryNumber { get => m_CarryNumber; set => m_CarryNumber = value; }
-        public int HealtyNumbe { get => m_HealtyNumbe; set => m_HealtyNumbe = value; }
+       
     }
 }
