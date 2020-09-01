@@ -9,20 +9,30 @@ namespace CoronaSimulator
 {
     public class Controller
     {
-        private Configuration m_config = new Configuration();
+        private Configuration m_config;
         private Random m_Rnd = new Random();
         private Cell[,] m_Grid;
         private int m_IDCounter = 0;
-        Form1 settings;
+        private SettingsForm m_SettingsFrm;
+        private SimulatorForm m_SimulatorFrm;
 
         public Controller()
         {
-            settings = new Form1();
-            settings.m_Control = this;
-            settings.ShowDialog();
+            m_SettingsFrm = new SettingsForm();
+            m_SimulatorFrm = new SimulatorForm();
+            m_SettingsFrm.m_Control = this;
+        }
+
+        public void Run()
+        {
+            m_SettingsFrm.ShowDialog();
+            m_SimulatorFrm.SimulatorConfiguration = this.m_config;
+            m_SimulatorFrm.setMoveControler();
+            m_SimulatorFrm.ShowDialog();
         }
 
         public Configuration Config { get => m_config; set => m_config = value; }
+
         public int IDCounter { get => m_IDCounter; set => m_IDCounter = value; }
 
         private void Init()

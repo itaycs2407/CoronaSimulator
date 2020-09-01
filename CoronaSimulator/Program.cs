@@ -17,7 +17,8 @@ namespace CoronaSimulator
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
-            Controller c = new Controller();
+            Controller Simulator = new Controller();
+            Simulator.Run();
         }
     }
 }

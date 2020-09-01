@@ -45,20 +45,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Array.cs" />
     <Compile Include="Cell.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="eStatus.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="FreeFlowMover.cs" />
+    <Compile Include="IMove.cs" />
+    <Compile Include="MatrixMover.cs" />
+    <Compile Include="SimulatorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="SimulatorForm.Designer.cs">
+      <DependentUpon>SimulatorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Tile.cs" />
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -68,7 +79,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SimulatorForm.resx">
+      <DependentUpon>SimulatorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -81,6 +96,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\aqua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\pink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\violet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\yellow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

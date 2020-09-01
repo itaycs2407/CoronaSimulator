@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CoronaSimulator
 {
     public class Configuration
     {
-        private int m_NumOfInspectors = 0;
+        private int m_NumOfInspectors = 3;
         private int m_Bound = 10;
         private int m_Tick = 1000;
         private int m_DistanceToBecomeCarrying = 1;
@@ -26,6 +28,14 @@ namespace CoronaSimulator
         public int HealtyNumber { get => m_HealtyNumber; set => m_HealtyNumber = value; }
         public int SickNumber { get => m_SickNumber; set => m_SickNumber = value; }
         public int CarryNumber { get => m_CarryNumber; set => m_CarryNumber = value; }
-       
+        public bool IncludeCenters { get; internal set; }
+        public int NumberOfCenters { get; internal set; }
+        public int CentersSize { get; internal set; }
+        public string StepType { get; internal set; }
+        public float Statistics1 { get; internal set; }
+        public float Statistics2 { get; internal set; }
+        public float Statistics3 { get; internal set; }
+        public float Statistics4 { get; internal set; }
+
     }
 }
