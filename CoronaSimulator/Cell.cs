@@ -18,11 +18,16 @@ namespace CoronaSimulator
             this.ID = i_ID;
             this.BodyHeat = i_BodyHeat;
             this.Status = i_InitStatus;
+
+            
         }
 
+       
         public int ID { get => m_ID; set => m_ID = value; }
         public float BodyHeat { get => m_BodyHeat; set => m_BodyHeat = value; }
         public eStatus Status { get => m_Status; set => m_Status = value; }
         public bool K_IsIsolated { get => k_IsIsolated; set => k_IsIsolated = value; }
     }
 }
+
+

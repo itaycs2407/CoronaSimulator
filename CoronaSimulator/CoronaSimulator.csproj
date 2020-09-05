@@ -52,6 +52,7 @@
     <Compile Include="eStatus.cs" />
     <Compile Include="FreeFlowMover.cs" />
     <Compile Include="IMove.cs" />
+    <Compile Include="ItemUtils.cs" />
     <Compile Include="MatrixMover.cs" />
     <Compile Include="SimulatorForm.cs">
       <SubType>Form</SubType>

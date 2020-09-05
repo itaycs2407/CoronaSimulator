@@ -85,6 +85,11 @@
             this.numericHealty.Name = "numericHealty";
             this.numericHealty.Size = new System.Drawing.Size(60, 20);
             this.numericHealty.TabIndex = 0;
+            this.numericHealty.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
             this.numericHealty.ValueChanged += new System.EventHandler(this.numericHealty_ValueChanged);
             // 
             // numericSick
@@ -93,6 +98,11 @@
             this.numericSick.Name = "numericSick";
             this.numericSick.Size = new System.Drawing.Size(60, 20);
             this.numericSick.TabIndex = 1;
+            this.numericSick.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
             this.numericSick.ValueChanged += new System.EventHandler(this.numericSick_ValueChanged);
             // 
             // numericCarry
@@ -101,6 +111,11 @@
             this.numericCarry.Name = "numericCarry";
             this.numericCarry.Size = new System.Drawing.Size(60, 20);
             this.numericCarry.TabIndex = 2;
+            this.numericCarry.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.numericCarry.ValueChanged += new System.EventHandler(this.numericCarry_ValueChanged);
             // 
             // numericTick
@@ -478,10 +493,12 @@
             // radioFreeFlow
             // 
             this.radioFreeFlow.AutoSize = true;
+            this.radioFreeFlow.Checked = true;
             this.radioFreeFlow.Location = new System.Drawing.Point(18, 53);
             this.radioFreeFlow.Name = "radioFreeFlow";
             this.radioFreeFlow.Size = new System.Drawing.Size(68, 17);
             this.radioFreeFlow.TabIndex = 1;
+            this.radioFreeFlow.TabStop = true;
             this.radioFreeFlow.Text = "Free flow";
             this.radioFreeFlow.UseVisualStyleBackColor = true;
             this.radioFreeFlow.Click += new System.EventHandler(this.radioFreeFlow_Checked);
@@ -489,12 +506,10 @@
             // radioMatrix
             // 
             this.radioMatrix.AutoSize = true;
-            this.radioMatrix.Checked = true;
             this.radioMatrix.Location = new System.Drawing.Point(18, 30);
             this.radioMatrix.Name = "radioMatrix";
             this.radioMatrix.Size = new System.Drawing.Size(53, 17);
             this.radioMatrix.TabIndex = 0;
-            this.radioMatrix.TabStop = true;
             this.radioMatrix.Text = "Matrix";
             this.radioMatrix.UseVisualStyleBackColor = true;
             this.radioMatrix.Click += new System.EventHandler(this.radioMatrix_Checked);

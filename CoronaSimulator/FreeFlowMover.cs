@@ -12,13 +12,16 @@ namespace CoronaSimulator
     {
         public int m_TileIndex { get; set; } = 1;
         public Configuration m_Config;
-        private Random rangeRnd = new Random();
+        private List<Tuple<int, int>> m_ElementCord = new List<Tuple<int, int>>();
 
         public System.Windows.Forms.Control[] AddElementToScreen(int i_NumberOfTypes, Bitmap i_Color, Tile i_Tile)
         {
             PictureBox tempTile;
+            const int k_NumberOfTriesToRandom = 10;
+            int numberOfTriesToRandomCTR = 0;
             System.Windows.Forms.Control[] tempList = new  System.Windows.Forms.Control[i_NumberOfTypes];
-            int panellRange = i_Tile.k_StartingCord + i_Tile.m_Bound * (i_Tile.m_TileSize + i_Tile.k_SpaceBetweenTiles) - i_Tile.k_SpaceBetweenTiles;
+            int panellRange = i_Tile.k_StartingCord + i_Tile.m_Bound * i_Tile.m_TileSize ;
+            //int panellRange = i_Tile.k_StartingCord + i_Tile.m_Bound * (i_Tile.m_TileSize + i_Tile.k_SpaceBetweenTiles) - i_Tile.k_SpaceBetweenTiles;
             for (int i = 0; i < i_NumberOfTypes; i++)
             {
                 tempTile = new PictureBox();
@@ -26,26 +29,23 @@ namespace CoronaSimulator
                 tempTile.Width = i_Tile.m_TileSize;
                 tempTile.Height = i_Tile.m_TileSize;
                 tempTile.Tag = m_TileIndex++;
-                tempTile.Top = getRandomCordInRange(panellRange, i_Tile.m_TileSize);
-                tempTile.Left = getRandomCordInRange(panellRange, i_Tile.m_TileSize);
-
+                tempTile.Top = ItemUtils.getRandomCordInRangeFreeFlow(panellRange, i_Tile.m_TileSize);
+                tempTile.Left = ItemUtils.getRandomCordInRangeFreeFlow(panellRange, i_Tile.m_TileSize);
+                while ((ItemUtils.isOnTop(tempTile.Top, tempTile.Left, i_Tile.m_TileSize, m_ElementCord)) && numberOfTriesToRandomCTR < k_NumberOfTriesToRandom)
+                {
+                    tempTile.Top = ItemUtils.getRandomCordInRangeFreeFlow(panellRange, i_Tile.m_TileSize);
+                    tempTile.Left = ItemUtils.getRandomCordInRangeFreeFlow(panellRange, i_Tile.m_TileSize);
+                    numberOfTriesToRandomCTR++;
+                }
+                numberOfTriesToRandomCTR = 0;
+                this.m_ElementCord.Add(Tuple.Create(tempTile.Top, tempTile.Left));
                 tempTile.SizeMode = PictureBoxSizeMode.StretchImage;
                 tempTile.Image = i_Color;
                 tempList[i] = tempTile;
-               // this.splitContainer2.Panel2.Controls.Add(tempTile);
             }
             return tempList;
         }
-
-        private int getRandomCordInRange(int i_PanellRange, int i_TileSize)
-        {
-            int result = rangeRnd.Next(i_PanellRange);
-            while (result > i_PanellRange- i_TileSize)
-            {
-                result = rangeRnd.Next(i_PanellRange);
-            }
-            return result;
-        }
+                
 
         public int[] GenrateMove()
         {
