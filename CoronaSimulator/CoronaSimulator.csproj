@@ -45,12 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Array.cs" />
     <Compile Include="Cell.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="eStatus.cs" />
-    <Compile Include="FreeFlowMover.cs" />
     <Compile Include="IMove.cs" />
     <Compile Include="ItemUtils.cs" />
     <Compile Include="MatrixMover.cs" />

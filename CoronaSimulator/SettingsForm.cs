@@ -63,7 +63,7 @@ namespace CoronaSimulator
                 savedConfiguration.NumberOfCenters = (int)numericNumOfCenters.Value;
                 savedConfiguration.CentersSize = (int)numericCentersSize.Value;
             }
-            savedConfiguration.StepType = radioFreeFlow.Checked ?  "FreeFlow" : "Matrix";
+            savedConfiguration.StepType = "Matrix";
       
             float.TryParse(FirstScroll.Text, out float s1);
             float.TryParse(SecondScroll.Text, out float s2);

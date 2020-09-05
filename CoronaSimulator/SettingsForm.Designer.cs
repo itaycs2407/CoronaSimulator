@@ -63,9 +63,6 @@
             this.numericCentersSize = new System.Windows.Forms.NumericUpDown();
             this.numericNumOfCenters = new System.Windows.Forms.NumericUpDown();
             this.checkBoxIncludeCenters = new System.Windows.Forms.CheckBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.radioFreeFlow = new System.Windows.Forms.RadioButton();
-            this.radioMatrix = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.numericHealty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericSick)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericCarry)).BeginInit();
@@ -76,7 +73,6 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericCentersSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericNumOfCenters)).BeginInit();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // numericHealty
@@ -479,41 +475,6 @@
             this.checkBoxIncludeCenters.UseVisualStyleBackColor = true;
             this.checkBoxIncludeCenters.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.radioFreeFlow);
-            this.groupBox4.Controls.Add(this.radioMatrix);
-            this.groupBox4.Location = new System.Drawing.Point(288, 243);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(114, 84);
-            this.groupBox4.TabIndex = 16;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Step type";
-            // 
-            // radioFreeFlow
-            // 
-            this.radioFreeFlow.AutoSize = true;
-            this.radioFreeFlow.Checked = true;
-            this.radioFreeFlow.Location = new System.Drawing.Point(18, 53);
-            this.radioFreeFlow.Name = "radioFreeFlow";
-            this.radioFreeFlow.Size = new System.Drawing.Size(68, 17);
-            this.radioFreeFlow.TabIndex = 1;
-            this.radioFreeFlow.TabStop = true;
-            this.radioFreeFlow.Text = "Free flow";
-            this.radioFreeFlow.UseVisualStyleBackColor = true;
-            this.radioFreeFlow.Click += new System.EventHandler(this.radioFreeFlow_Checked);
-            // 
-            // radioMatrix
-            // 
-            this.radioMatrix.AutoSize = true;
-            this.radioMatrix.Location = new System.Drawing.Point(18, 30);
-            this.radioMatrix.Name = "radioMatrix";
-            this.radioMatrix.Size = new System.Drawing.Size(53, 17);
-            this.radioMatrix.TabIndex = 0;
-            this.radioMatrix.Text = "Matrix";
-            this.radioMatrix.UseVisualStyleBackColor = true;
-            this.radioMatrix.Click += new System.EventHandler(this.radioMatrix_Checked);
-            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -521,7 +482,6 @@
             this.AutoSize = true;
             this.CancelButton = this.ExitBtn;
             this.ClientSize = new System.Drawing.Size(704, 348);
-            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label6);
@@ -549,8 +509,6 @@
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericCentersSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericNumOfCenters)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -588,9 +546,6 @@
         private System.Windows.Forms.NumericUpDown numericCentersSize;
         private System.Windows.Forms.NumericUpDown numericNumOfCenters;
         private System.Windows.Forms.CheckBox checkBoxIncludeCenters;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.RadioButton radioFreeFlow;
-        private System.Windows.Forms.RadioButton radioMatrix;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;

@@ -15,19 +15,22 @@ namespace CoronaSimulator
         private int m_IDCounter = 0;
         private SettingsForm m_SettingsFrm;
         private SimulatorForm m_SimulatorFrm;
+        private IMove m_MoveController;
 
         public Controller()
         {
             m_SettingsFrm = new SettingsForm();
             m_SimulatorFrm = new SimulatorForm();
             m_SettingsFrm.m_Control = this;
+            m_SimulatorFrm.m_Control = this;
         }
 
         public void Run()
         {
             m_SettingsFrm.ShowDialog();
             m_SimulatorFrm.SimulatorConfiguration = this.m_config;
-            m_SimulatorFrm.setMoveControler();
+            setMoveControler();
+            Init();
             m_SimulatorFrm.ShowDialog();
         }
 
@@ -35,19 +38,36 @@ namespace CoronaSimulator
 
         public int IDCounter { get => m_IDCounter; set => m_IDCounter = value; }
 
+
+        public void setMoveControler()
+        {
+            this.m_MoveController = new MatrixMover();
+            this.m_MoveController.setConfiguration(this.Config);
+        }
+        public Cell[,] GetGrid()
+        {
+            return this.m_Grid;
+        }
+        public void SetGrid(Cell [,] i_Grid)
+        {
+            this.m_Grid = i_Grid;
+        }
         private void Init()
         {
             initGrid();
+            this.m_Grid = m_MoveController.CreateElement();
+            updateUi(this.m_Grid);
         }
 
+        private void updateUi(Cell [,] i_Grid)
+        {
+            this.m_SimulatorFrm.UpdateUi(m_Grid); 
+        }
         private void initGrid()
         {
             int gridBoundSize = Config.Bound;
             m_Grid = new Cell[gridBoundSize, gridBoundSize];
             initAllCells();
-            initCellsWithPersons(Config.HealtyNumber, eStatus.Healty);
-            initCellsWithPersons(Config.SickNumber, eStatus.Sick);
-            initCellsWithPersons(Config.CarryNumber, eStatus.Carry);
         }
 
         private void initAllCells()
@@ -61,27 +81,7 @@ namespace CoronaSimulator
             }
         }
 
-        private void initCellsWithPersons(int i_NumberOfInstances, eStatus i_Status)
-        {
-            int x, y;
-            for (int i = 0; i < i_NumberOfInstances; i++)
-            {
-                do
-                {
-                    x = m_Rnd.Next();
-                    y = m_Rnd.Next();
-                }
-                while (!isAvailable(x, y));
-                m_Grid[x,y].ID = IDCounter++;
-                m_Grid[x, y].Status = i_Status;
-                m_Grid[x, y].BodyHeat =i_Status == eStatus.Sick ? m_Rnd.Next(38, 40) + (float)m_Rnd.NextDouble() : m_Rnd.Next(35, 38) + (float)m_Rnd.NextDouble();
-            }
-        }
-
-        private bool isAvailable(int i_X, int i_Y)
-        {
-            return m_Grid[i_X, i_Y].ID == 0;
-        }
+        
     }
 }
 

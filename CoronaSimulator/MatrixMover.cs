@@ -11,13 +11,52 @@ namespace CoronaSimulator
     class MatrixMover : IMove
     {
         public Configuration m_Config;
-        private Cell[,] m_Grid;
-        public int m_TileIndex { get; set; } = 1;
-        private List<Tuple<int, int>> m_ElementCord = new List<Tuple<int, int>>();
-        MatrixMover(Tile I_Tile)
+       
+        public MatrixMover()
         {
-            m_Grid = new Cell[I_Tile.m_Bound, I_Tile.m_Bound];
         }
+
+        private void initCellsWithPersons(int i_NumberOfInstances, eStatus i_Status)
+        {
+            int x, y;
+            for (int i = 0; i < i_NumberOfInstances; i++)
+            {
+                do
+                {
+                    x = m_Rnd.Next();
+                    y = m_Rnd.Next();
+                }
+                while (!isAvailable(x, y));
+                m_Grid[x, y].ID = IDCounter++;
+                m_Grid[x, y].Status = i_Status;
+                m_Grid[x, y].BodyHeat = i_Status == eStatus.Sick ? m_Rnd.Next(38, 40) + (float)m_Rnd.NextDouble() : m_Rnd.Next(35, 38) + (float)m_Rnd.NextDouble();
+            }
+        }
+
+        private bool isAvailable(int i_X, int i_Y)
+        {
+            return m_Grid[i_X, i_Y].ID == 0;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         public int[] GenrateMove()
         {
@@ -29,37 +68,11 @@ namespace CoronaSimulator
         {
             this.m_Config = i_Config;
         }
+        public 
 
         Control[] IMove.AddElementToScreen(int i_NumberOfTypes, Bitmap i_Color, Tile i_Tile)
         {
-            PictureBox tempTile;
-            System.Windows.Forms.Control[] tempList = new System.Windows.Forms.Control[i_NumberOfTypes];
-            int panellRange = i_Tile.k_StartingCord + i_Tile.m_Bound * i_Tile.m_TileSize;
-
-
-            for (int i = 0; i < i_NumberOfTypes; i++)
-            {
-                tempTile = new PictureBox();
-                tempTile.Visible = true;
-                tempTile.Width = i_Tile.m_TileSize;
-                tempTile.Height = i_Tile.m_TileSize;
-                tempTile.Tag = m_TileIndex++;
-                int rowIndex = ItemUtils.getRandomCordInRangeMatrix(i_Tile.m_Bound);
-                int colIndex = ItemUtils.getRandomCordInRangeMatrix(i_Tile.m_Bound);
-                while (m_Grid[rowIndex,colIndex].ID == 0)
-                {
-                   rowIndex = ItemUtils.getRandomCordInRangeMatrix(i_Tile.m_Bound);
-                   colIndex = ItemUtils.getRandomCordInRangeMatrix(i_Tile.m_Bound);
-                }
-                m_Grid[rowIndex, colIndex].ID == tempTile.Tag
-                tempTile.Top = 
-                tempTile.Left = 
-                this.m_ElementCord.Add(Tuple.Create(tempTile.Top, tempTile.Left));
-                tempTile.SizeMode = PictureBoxSizeMode.StretchImage;
-                tempTile.Image = i_Color;
-                tempList[i] = tempTile;
-            }
-            return tempList;
+            
         }
     }
 }

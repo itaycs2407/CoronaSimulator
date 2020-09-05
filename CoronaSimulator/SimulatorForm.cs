@@ -9,7 +9,9 @@ namespace CoronaSimulator
     public partial class SimulatorForm : Form
     {
         private Configuration m_SimulatorConfiguration;
-       
+
+        public Controller m_Control = null;
+
         private IMove m_MoveControler;
         
         public SimulatorForm()
@@ -19,18 +21,6 @@ namespace CoronaSimulator
 
         public Configuration SimulatorConfiguration { get => m_SimulatorConfiguration; set => m_SimulatorConfiguration = value; }
 
-        public void setMoveControler()
-        {
-            if (SimulatorConfiguration.StepType == "FreeFlow")
-            {
-                this.m_MoveControler = new FreeFlowMover();
-            }
-            else
-            {
-                this.m_MoveControler = new MatrixMover();
-            }
-            this.m_MoveControler.setConfiguration(this.SimulatorConfiguration);
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
