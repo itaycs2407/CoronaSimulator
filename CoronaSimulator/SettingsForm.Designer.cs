@@ -145,7 +145,7 @@
             // 
             this.numericFieldSize.Location = new System.Drawing.Point(127, 123);
             this.numericFieldSize.Maximum = new decimal(new int[] {
-            12,
+            25,
             0,
             0,
             0});

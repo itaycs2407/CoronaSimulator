@@ -10,7 +10,7 @@ namespace CoronaSimulator
     public class Controller
     {
         private Configuration m_config;
-        private Random m_Rnd = new Random();
+       
         private Cell[,] m_Grid;
         private int m_IDCounter = 0;
         private SettingsForm m_SettingsFrm;
@@ -55,7 +55,7 @@ namespace CoronaSimulator
         private void Init()
         {
             initGrid();
-            this.m_Grid = m_MoveController.CreateElement();
+            m_MoveController.CreateElements(ref this.m_Grid);
             updateUi(this.m_Grid);
         }
 
@@ -81,7 +81,11 @@ namespace CoronaSimulator
             }
         }
 
-        
+        internal void MoveElemnts()
+        {
+            m_MoveController.GenrateMove(ref m_Grid);
+            m_SimulatorFrm.UpdateUi(m_Grid);
+        }
     }
 }
 

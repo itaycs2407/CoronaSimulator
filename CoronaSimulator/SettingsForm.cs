@@ -164,15 +164,6 @@ namespace CoronaSimulator
             }
         }
 
-        private void radioMatrix_Checked(object sender, EventArgs e)
-        {
-            radioFreeFlow.Checked = false;
-        }
-
-        private void radioFreeFlow_Checked(object sender, EventArgs e)
-        {
-            radioMatrix.Checked = false;
-        }
 
         
     }

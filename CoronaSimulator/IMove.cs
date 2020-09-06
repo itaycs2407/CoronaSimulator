@@ -10,7 +10,7 @@ namespace CoronaSimulator
     public interface IMove
     {
         void setConfiguration(Configuration i_Config);
-        int[] GenrateMove();
-        System.Windows.Forms.Control[] AddElementToScreen(int i_NumberOfTypes, Bitmap i_Color, Tile i_Tile);
+        void GenrateMove(ref Cell[,] io_Grid);
+        void CreateElements(ref Cell [,] io_Grid);
     }
 }

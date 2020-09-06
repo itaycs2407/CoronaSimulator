@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimulatorForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.Move = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -68,6 +69,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.Move);
             this.splitContainer1.Panel2.Controls.Add(this.button1);
             this.splitContainer1.Size = new System.Drawing.Size(1109, 679);
             this.splitContainer1.SplitterDistance = 566;
@@ -86,6 +88,16 @@
             this.splitContainer2.Size = new System.Drawing.Size(1109, 566);
             this.splitContainer2.SplitterDistance = 393;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // Move
+            // 
+            this.Move.Location = new System.Drawing.Point(849, 26);
+            this.Move.Name = "Move";
+            this.Move.Size = new System.Drawing.Size(75, 23);
+            this.Move.TabIndex = 1;
+            this.Move.Text = "Move";
+            this.Move.UseVisualStyleBackColor = true;
+            this.Move.Click += new System.EventHandler(this.Move_Click);
             // 
             // button1
             // 
@@ -225,7 +237,6 @@
             this.Name = "SimulatorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Covid-19 Simulator";
-            this.Load += new System.EventHandler(this.SimulatorForm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -258,5 +269,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button Move;
     }
 }

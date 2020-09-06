@@ -12,7 +12,8 @@ namespace CoronaSimulator
         Healty,
         Sick,
         Carry,
-        Dead
+        Dead, 
+        Inspector
 
     }
 }

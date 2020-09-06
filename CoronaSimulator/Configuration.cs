@@ -11,7 +11,7 @@ namespace CoronaSimulator
 {
     public class Configuration
     {
-        private int m_NumOfInspectors = 3;
+        private int m_NumOfInspectors = 5;
         private int m_Bound = 10;
         private int m_Tick = 1000;
         private int m_DistanceToBecomeCarrying = 1;
@@ -20,7 +20,7 @@ namespace CoronaSimulator
         private int m_SickNumber = 10;
         private int m_CarryNumber = 10;
 
-        public int NumOfInspectors { get => m_NumOfInspectors; set => m_NumOfInspectors = value; }
+        public int InspectorsNumber { get => m_NumOfInspectors; set => m_NumOfInspectors = value; }
         public int Bound { get => m_Bound; set => m_Bound = value; }
         public int Tick { get => m_Tick; set => m_Tick = value; }
         public int DistanceToBecomeCarrying { get => m_DistanceToBecomeCarrying; set => m_DistanceToBecomeCarrying = value; }
