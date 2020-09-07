@@ -85,6 +85,7 @@ namespace CoronaSimulator
         {
             m_MoveController.GenrateMove(ref m_Grid);
             m_SimulatorFrm.UpdateUi(m_Grid);
+            
         }
     }
 }

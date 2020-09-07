@@ -82,7 +82,7 @@
             this.numericHealty.Size = new System.Drawing.Size(60, 20);
             this.numericHealty.TabIndex = 0;
             this.numericHealty.Value = new decimal(new int[] {
-            4,
+            10,
             0,
             0,
             0});
@@ -95,7 +95,7 @@
             this.numericSick.Size = new System.Drawing.Size(60, 20);
             this.numericSick.TabIndex = 1;
             this.numericSick.Value = new decimal(new int[] {
-            8,
+            10,
             0,
             0,
             0});
@@ -108,7 +108,7 @@
             this.numericCarry.Size = new System.Drawing.Size(60, 20);
             this.numericCarry.TabIndex = 2;
             this.numericCarry.Value = new decimal(new int[] {
-            5,
+            10,
             0,
             0,
             0});
@@ -128,7 +128,7 @@
             0,
             0});
             this.numericTick.Minimum = new decimal(new int[] {
-            500,
+            10,
             0,
             0,
             0});
@@ -136,7 +136,7 @@
             this.numericTick.Size = new System.Drawing.Size(60, 20);
             this.numericTick.TabIndex = 3;
             this.numericTick.Value = new decimal(new int[] {
-            500,
+            10,
             0,
             0,
             0});

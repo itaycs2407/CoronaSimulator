@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,14 +13,14 @@ namespace CoronaSimulator
         private float m_BodyHeat;
         private eStatus m_Status;
         private bool k_IsIsolated = !true;
-
+        public Bitmap Color { get; set; }
         public Cell(int i_ID, float i_BodyHeat, eStatus i_InitStatus)
         {
             this.ID = i_ID;
             this.BodyHeat = i_BodyHeat;
             this.Status = i_InitStatus;
-
-            
+            this.Color = null;
+           
         }
 
        
